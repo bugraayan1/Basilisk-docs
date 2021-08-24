@@ -5,29 +5,29 @@ title: Parachain Auctions
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Parachain auctions provide a mechanism to distribute the available [parachain](/parachains) slots in Kusama to the most appropriate candidates. This article introduces parachain auctions by exploring two questions: Why do we have parachain auctions, and how do they work?
+Parachain müzayedeleri, Kusama'daki mevcut [parachain](/parachains) slotlarını en uygun adaylara dağıtmak için bir mekanizma sağlar. Bu makale, iki soruyu inceleyerek parachain müzayedelerini tanıtıyor: Neden parachain müzayedelerimiz var ve bunlar nasıl çalışıyor?
 
-## Why? {#why}
+## Neden? {#Niye}
 
-Kusama and Polkadot are only able to support a limited number of parachains which are connected to their relay chain at the same time. The long-term goal for Polkadot is 100 parachains, while Kusama is kicking off the party with 5 parachains in the first round and another 5 to follow shortly thereafter.
+Kusama ve Polkadot, aynı anda röle zincirlerine bağlı sınırlı sayıda parachain'i destekleyebilir. Polkadot için uzun vadeli hedef 100 parachain, Kusama ise partiyi ilk turda 5 parachain ve kısa bir süre sonra takip edecek 5 parachain ile başlatıyor.
 
-Against this background, parachain auctions were introduced as a market-efficient instrument for dealing with the scarcity by distributing the available slots to the most appropriate parachain candidates.
+Bu arka plana karşı, parachain müzayedeleri, mevcut slotları en uygun parachain adaylarına dağıtarak kıtlıkla başa çıkmak için piyasa açısından verimli bir araç olarak tanıtıldı.
 
 
-## How do Parachain Auctions work? {#how}
+## Parachain Müzayedeleri nasıl çalışır? {#nasıl}
 
-Parachain slots are offered on an one-by-one basis in separate auctions which have the duration of 1 week. During this timeframe, candidate projects can bid on a parachain slot of their desired duration. The available slots are divided into lease periods of 6 weeks. The maximum duration of a parachain slot is 48 weeks (8 * 6 weeks). Below, you can see the auctions schedule for the first 5 Kusama slots.
+Parachain slotları 1 hafta süreli ayrı müzayedelerde tek tek sunulmaktadır. Bu süre zarfında, aday projeler istedikleri süre boyunca bir parachain yuvasına teklif verebilirler. Mevcut slotlar 6 haftalık kiralama sürelerine bölünmüştür. Bir parachain yuvasının maksimum süresi 48 haftadır (8 * 6 hafta). Aşağıda, ilk 5 Kusama slotu için müzayede programını görebilirsiniz.
 
 <div style={{textAlign: 'center', marginBottom: '2rem'}}>
   <img alt="create-account" src={useBaseUrl('/img/parachain-auctions/ksm-schedule.jpg')}  />
 </div>
 
-The winner of the auction is the parachain candidate that has offered the **highest amount of KSM to be locked up** for the duration of the parachain slot at the closing moment of the auction. However, this might not be very straight-forward because Kusama uses the so-called **candle auction mechanism** in which the closing moment of the auction is **initially unknown**.
+Açık artırmanın galibi, açık artırmanın kapanış anında parachain yuvası süresince **kilitlenecek en yüksek KSM miktarını** teklif eden parachain adayıdır. Bununla birlikte, Kusama, müzayedenin kapanış anının **başlangıçta bilinmediği** **mum müzayede mekanizması** olarak adlandırılan mekanizmayı kullandığından, bu çok basit olmayabilir.
 
-As illustrated by the image below, the candle auctions consist of a starting period (1 day 21 hours) and an ending period (5 days). Candidates are able to bring out their bids at any moment, however the official auction closing moment is determined at the very end by picking a random moment somewhere within the ending period of 5 days. The candidate with the highest bid at that specific moment is the winner of the parachain slot.
+Aşağıdaki resimde gösterildiği gibi, mum müzayedeleri bir başlangıç dönemi (1 gün 21 saat) ve bir bitiş döneminden (5 gün) oluşur. Adaylar her an tekliflerini sunabilirler, ancak resmi müzayede kapanış anı en sonunda 5 günlük bitiş süresi içinde rastgele bir an seçilerek belirlenir. O anda en yüksek teklifi veren aday, parachain yuvasının galibi olur.
 
 <div style={{textAlign: 'center', marginBottom: '2rem'}}>
   <img alt="create-account" src={useBaseUrl('/img/parachain-auctions/auction-mechanism.jpg')}  />
 </div>
 
-The rationale behind this auction mechanism is to prevent auction sniping while promoting a more accurate price discovery. For crowdloan backers, it has an important implication: Support the [Basilisk crowdloan](/basilisk_crowdloan) by locking your KSM early rather than late. This way, you make sure that your contribution is counted towards the winning bid of Basilisk.
+Bu açık artırma mekanizmasının arkasındaki mantık, daha doğru bir fiyat keşfini teşvik ederken açık artırma keskin nişancılığını önlemektir. Kitle kredisi destekçileri için bunun önemli bir anlamı vardır: KSM'nizi geç yerine erken kilitleyerek [Basilisk kitle kredisini](/basilisk_crowdloan) destekleyin. Bu şekilde, katkınızın Basilisk'in kazanan teklifine sayıldığından emin olursunuz.
