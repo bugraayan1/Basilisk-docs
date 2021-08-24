@@ -3,18 +3,18 @@ id: crowdloans
 title: Crowdloans
 ---
 
-Crowdloans help [parachain](/parachains) candidates raise sufficient funds for winning a slot in the [parachain auctions](/parachain_auctions). This article provides a general understanding of how crowdloans work. For specific information on our running crowdloan campaign, please head to the [Basilisk crowdloan page](/basilisk_crowdloan).
+Kitle kredileri, [parachain](/parachains) adaylarının [parachain müzayedelerinde](/parachain_auctions) bir slot kazanmak için yeterli para toplamasına yardımcı olur. Bu makale, kitle kredilerinin nasıl çalıştığına dair genel bir anlayış sağlar. Yürütülen kitle kredisi kampanyamız hakkında özel bilgi için lütfen [Basilisk kitle kredisi sayfasına](/basilisk_crowdloan) gidin.
 
 
-## How does a Crowdloan Work? {#how}
+## Kitle Kredisi Nasıl Çalışır? {#nasıl}
 
-Parachain candidates can initiate a crowdloan campaign using the dedicated Kusama crowdloan module. When doing so, they set its goal (amount of KSM to be raised) as well its end date (by when). The crowdloan campaign is usually initiated before the start of the parachain auction, thereby giving the candidate sufficient time to raise funding.
+Parachain adayları, özel Kusama kitle kredisi modülünü kullanarak bir kitle kredisi kampanyası başlatabilir. Bunu yaparken, hedefini (yükseltilecek KSM miktarını) ve bitiş tarihini (ne zamana kadar) belirlerler. Kitle kredisi kampanyası genellikle parachain müzayedesinin başlamasından önce başlatılır ve böylece adaya fon toplaması için yeterli zaman verilir.
 
-Crowdloan backers support the parachain candidate of their choice by locking a certain amount of KSM which will be used to place a bid in the parachain auction. The KSM remains locked until one of the following unlocking events has been triggered:
+Kitle kredisi destekçileri, parachain müzayedesinde teklif vermek için kullanılacak belirli bir miktarda KSM'yi kilitleyerek kendi seçtikleri parachain adayını destekler. KSM, aşağıdaki kilit açma olaylarından biri tetiklenene kadar kilitli kalır:
 
-* Candidate wins a parachain slot: After the duration of the parachain slot has expired (48 weeks for Basilisk)
-* Candidate does not win a parachain slot: Once the crowdloan goal has been reached or the crowdloan campaign has expired
+* Aday bir parachain yuvası kazanır: Parachain yuvasının süresi dolduktan sonra (Basilisk için 48 hafta)
+* Aday bir parachain yuvası kazanmaz: Kitle kredisi hedefine ulaşıldığında veya kitle kredisi kampanyası sona erdiğinde
 
-While crowdloan backers do receive back their funds in full once the unlocking event has been triggered, participating at a crowdloan still bears the so-called **opportunity costs**. These reflect the benefits that were missed by locking KSM tokens for a given period as opposed to investing them in another way. For example, instead of locking KSM tokens for 1 year, users could decide to stake their KSM which would bring them 10-15% rewards. In this example, the 10-15% rewards represent the opportunity costs of participating at a crowdloan.
+Kitle kredisi destekçileri, kilit açma olayı tetiklendiğinde fonlarını tam olarak geri alırken, bir kitle kredisine katılmak hala **fırsat maliyetlerini** üstlenir. Bunlar, başka bir şekilde yatırım yapmak yerine belirli bir süre için KSM tokenlerini kilitleyerek kaçırılan faydaları yansıtır. Örneğin, KSM tokenlerini 1 yıllığına kilitlemek yerine, kullanıcılar KSM'lerini stake etmeye karar verebilirler ve bu da onlara %10-15 ödül getirir. Bu örnekte, %10-15'lik ödüller, bir kitle kredisine katılmanın fırsat maliyetlerini temsil etmektedir.
 
-At Basilisk, we have made our best to make sure that our backers do not have to think too much about opportunity costs: Check out the generous rewards scheme of the [Basilisk crowdloan](/basilisk_crowdloan)!
+Basilisk'te, destekçilerimizin fırsat maliyetleri hakkında çok fazla düşünmek zorunda kalmamasını sağlamak için elimizden gelenin en iyisini yaptık: [Basilisk kitle kredisinin](/basilisk_crowdloan) cömert ödül planına göz atın!
