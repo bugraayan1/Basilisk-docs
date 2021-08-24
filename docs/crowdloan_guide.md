@@ -5,52 +5,50 @@ title: Participate in Crowdloan
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article guides you through the process of participating in the [Basilisk crowdloan](/basilisk_crowdloan) using the dedicated crowdloan page: https://loan.bsx.fi
+Bu makale, özel kitle kredisi sayfasını kullanarak [Basilisk kitle kredisine](/basilisk_crowdloan) katılma sürecinde size rehberlik eder: https://loan.bsx.fi
 
-## Requirements {#requirements}
+## Gereksinimler {#gereksinimler}
 
-To participate using the dedicated crowdloan page, you need to have a [Polkadot.js wallet](https://polkadot.js.org/extension/) holding the KSM tokens you want to stake.
+Özel kitle kredisi sayfasını kullanarak katılmak için, stake etmek istediğiniz KSM jetonlarını tutan bir [Polkadot.js cüzdanına](https://polkadot.js.org/extension/) sahip olmanız gerekir.
 
 :::caution
 
-It is not possible to participate in the crowdloan using a hardware wallet. Currently, hardware wallets do not support the Kusama crowdloan module. 
-
+Donanım cüzdanı kullanarak kitle kredisine katılmak mümkün değildir. Şu anda donanım cüzdanları Kusama kitle kredisi modülünü desteklememektedir.
 :::
 
 ## 00 Crowdloan UI {#00-crowdloan-ui}
 
-To access the Basilisk Crowdloan UI, navigate to https://loan.bsx.fi.
+Basilisk Crowdloan kullanıcı arayüzüne erişmek için https://loan.bsx.fi adresine gidin.
 
 <div style={{textAlign: 'center', marginBottom: '2rem'}}>
   <img alt="create-account" src={useBaseUrl('/img/crowdloan-guide/chart.png')}  />
 </div>
 
-The chart in the middle provides information about the ongoing auction for the parachain slot. The green line shows the amount of KSM tokens which have been raised by Basilisk, while the yellow line corresponds to the KSM raised by the main competitor of Basilisk. The horizontal red line demarks the beginning of the closing period of the target parachain auction. All this information is relevant for determining the amount of [BSX awards and HDX bonus](/basilisk_crowdloan) which you will receive for your contribution. 
+Ortadaki grafik, parachain yuvası için devam eden müzayede hakkında bilgi sağlar. Yeşil çizgi, Basilisk tarafından toplanan KSM tokenlerinin miktarını gösterirken sarı çizgi, Basilisk'in ana rakibi tarafından toplanan KSM'ye karşılık gelir. Yatay kırmızı çizgi, hedef parachain müzayedesinin kapanış periyodunun başlangıcını gösterir. Tüm bu bilgiler, katkınız karşılığında alacağınız [BSX ödülleri ve HDX bonusu](/basilisk_crowdloan) miktarını belirlemek için önemlidir.
 
-## 01 Select your address {#01-select-address}
+## 01 Adresinizi seçin {#01-adres seçin}
 
-To begin, click on *change your account* and select the address holding your KSM tokens.
+Başlamak için *hesabınızı değiştirin* üzerine tıklayın ve KSM jetonlarınızın bulunduğu adresi seçin.
 
 <div style={{textAlign: 'center', marginBottom: '2rem'}}>
   <img alt="create-account" src={useBaseUrl('/img/crowdloan-guide/select-account.png')}  />
 </div>
 
-## 02 Enter your KSM Contribution {#02-enter-ksm-contribution}
+## 02 KSM Katkınızı Girin {#02-enter-ksm-contribution}
 
-As a next step, you can enter the amount of KSM you would like to contribute. After doing so, you will see a prediction of the rewards you are going to receive:
+Bir sonraki adım olarak, katkıda bulunmak istediğiniz KSM miktarını girebilirsiniz. Bunu yaptıktan sonra alacağınız ödüllerin bir tahminini göreceksiniz:
 
-* **Minimum BSX Received** - the minimum amount of BSX tokens you can expect to receive for your contribution. The exact amount can only be determined after the crowdloan has closed in the event of a successful auction.
+* **Alınan Minimum BSX** - katkınız karşılığında almayı bekleyebileceğiniz minimum BSX jeton miktarı. Kesin miktar, ancak başarılı bir açık artırma durumunda kitle kredisi kapandıktan sonra belirlenebilir.
 
-* **Current BSX Received** - a **wild** estimate of how much you would receive under the current auction conditions. This estimate can be unreliable.
+* **Mevcut BSX Alınan** - mevcut müzayede koşullarında ne kadar alacağınıza dair **çıplak** bir tahmin. Bu tahmin güvenilmez olabilir.
 
-* **Current HDX Received** - the amount of HDX bonus which will be received for the contribution.
+* **Alınan Mevcut HDX** - katkı için alınacak HDX bonusu miktarı.
 
-If you want to know more about the mechanics behind the rewards calculation, please refer to the [Basilisk crowdloan post](/basilisk_crowdloan).
+Ödül hesaplamasının ardındaki mekanikler hakkında daha fazla bilgi edinmek istiyorsanız, lütfen [Basilisk kitle kredisi gönderisine](/basilisk_crowdloan) bakın.
 
-## 03 Submit your Contribution {#03-submit}
+## 03 Katkınızı Gönderin {#03-gönder}
 
-To finalize the process, click on *Contribute* and sign the transaction using the account holding your KSM tokens.
-
+İşlemi tamamlamak için *Katkıda bulun*'a tıklayın ve KSM jetonlarınızı tutan hesabı kullanarak işlemi imzalayın.
 <div style={{textAlign: 'center', marginBottom: '2rem'}}>
   <img alt="create-account" src={useBaseUrl('/img/crowdloan-guide/sign-submit.png')}  />
 </div>
