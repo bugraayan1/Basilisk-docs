@@ -3,16 +3,16 @@ id: infra_testnet
 title: Testnet Deployment
 ---
 
-This article shares the manifests and other yaml configurations which we have put together for the automated deployment of our testnet (Relay Chain + Parachain). If you are interested to find out more about our journey towards cutting-edge automated deployment using Kubernetes, together with the technical decisions we had to make on the way, [please check out this blog post](https://basiliskfi.substack.com/p/automation-of-our-testnet-deployment).
+Bu makale, test ağımızın (Relay Chain + Parachain) otomatik dağıtımı için bir araya getirdiğimiz manifestoları ve diğer yaml konfigürasyonlarını paylaşmaktadır. Kubernetes'i kullanarak son teknoloji otomatik dağıtıma yönelik yolculuğumuz ve bu yolda almamız gereken teknik kararlarla ilgili daha fazla bilgi edinmek istiyorsanız [lütfen bu blog gönderisine göz atın](https://basiliskfi.substack. com/p/automation-of-our-testnet-deployment).
 
-## Technologies used {#technologies}
-* Kubernetes - we run it in the cloud (AWS Fargate), mainly for convenience reasons. However, you can adapt the yaml manifests to spin up your own K8s cluster.
-* Terraform - because we like having our infra as code.
-* GitHub Actions - for CI/CD.
+## Kullanılan teknolojiler {#teknolojiler}
+* Kubernetes - esas olarak kolaylık nedeniyle bulutta (AWS Fargate) çalıştırıyoruz. Ancak, kendi K8s kümenizi döndürmek için yaml bildirimlerini uyarlayabilirsiniz.
+* Terraform - çünkü alt yapımızı kod olarak kullanmayı seviyoruz.
+* GitHub Eylemleri - CI/CD için.
 
-## Cluster configuration {#cluster-config}
+## Küme yapılandırması {#cluster-config}
 
-Since we decided to run our Kubernetes cluster in the cloud with AWS Fargate, we can use the following yaml manifest for the cluster configuration:
+Kubernetes kümemizi AWS Fargate ile bulutta çalıştırmaya karar verdiğimiz için küme yapılandırması için aşağıdaki yaml bildirimini kullanabiliriz:
 
 ```yaml
 apiVersion: eksctl.io/v1alpha5
@@ -46,13 +46,13 @@ fargateProfiles:
           checks: passed
 ```
 
-Once we have this sorted out, it is time to create and apply the Kubernetes objects needed for the Relay Chain and the Parachain.
+Bunu hallettikten sonra, Relay Chain ve Parachain için gereken Kubernetes nesnelerini oluşturma ve uygulama zamanı geldi.
 
-## Relay Chain {#alice}
-First is Alice. We will create 3 types of objects: a Deployment, a Service and an Ingress object.
+## Röle Zinciri {#alice}
+Birincisi Alice'di. 3 tür nesne oluşturacağız: Dağıtım, Hizmet ve Giriş nesnesi.
 
-### Deployment {#alice-deployment}
-In this manifest, we choose the name of our node, the ports to expose, the command and its arguments, as well as the number of replicas. This parameter is important as we only want one replica per node in order to avoid sync issues. Note that you can have as many nodes as necessary.
+### Dağıtım {#alice-dağıtım}
+Bu bildirimde, düğümümüzün adını, açığa çıkarılacak bağlantı noktalarını, komutu ve argümanlarını ve ayrıca kopya sayısını seçiyoruz. Eşitleme sorunlarını önlemek için düğüm başına yalnızca bir kopya istediğimiz için bu parametre önemlidir. Gerektiği kadar çok düğümünüz olabileceğini unutmayın.
 
 ```yaml
 apiVersion: apps/v1
@@ -81,10 +81,10 @@ spec:
         - containerPort: 30333
 ```
 
-### Service {#alice-service}
-We use the Service object in Kubernetes for at least two purposes here:
-1. In the first place, we want to allow nodes to communicate with each other (please check [this link for more info](https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/)).
-2. In the second place, we will be able to expose the service to the outside world using an Ingress object as described in the following step.
+### Hizmet {#alice-servis}
+Kubernetes'te Service nesnesini burada en az iki amaç için kullanırız:
+1. İlk olarak, düğümlerin birbirleriyle iletişim kurmasına izin vermek istiyoruz (lütfen [daha fazla bilgi için bu bağlantıya bakın](https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/ )).
+2. İkinci olarak, aşağıdaki adımda açıklandığı gibi bir Ingress nesnesi kullanarak hizmeti dış dünyaya sunabileceğiz.
 
 ```yaml
 apiVersion: v1
@@ -107,12 +107,12 @@ spec:
     app.kubernetes.io/name: relaychain-alice
 ```
 
-Please note that if you wish to expose the service to the outside world, the `selector` parameter has a crucial role.
+Hizmeti dış dünyaya göstermek istiyorsanız, 'selector' parametresinin çok önemli bir rolü olduğunu lütfen unutmayın.
 
-### Ingress {#alice-ingress}
-The Ingress object exposes our service to the outside world (in our case using the host address `relaychain.hydration.cloud`). For this purpose, we are using the ALB Controller Service of AWS ([more information here](https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html)).
+### Giriş {#alice-giriş}
+Ingress nesnesi hizmetimizi dış dünyaya gösterir (bizim durumumuzda `relaychain.hidration.cloud` ana bilgisayar adresini kullanarak). Bu amaçla, AWS'nin ALB Denetleyici Hizmetini kullanıyoruz ([buradan daha fazla bilgi](https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html)).
 
-The parameters of the Ingress object are pretty much basic, and can largely be kept as-is ([more info here](https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.2/guide/ingress/annotations/)). The most important value to adjust is the one of `alb.ingress.kubernetes.io/certificate-arn`, which is the identifier of the ACM Certificate you get when you create an entry in [ACM](https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html) for your `host`. More details on this later on.
+Ingress nesnesinin parametreleri oldukça basittir ve büyük ölçüde olduğu gibi tutulabilir ([buradan daha fazla bilgi](https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.2/) kılavuz/giriş/ek açıklamalar/)). Ayarlanması gereken en önemli değer, [ACM](https://docs.txt)'de bir giriş oluşturduğunuzda aldığınız ACM Sertifikasının tanımlayıcısı olan `alb.ingress.kubernetes.io/certificate-arn` değeridir. aws.amazon.com/acm/latest/userguide/acm-overview.html) "ana makineniz" için. Bu konuda daha fazla ayrıntı daha sonra.
 
 
 ```yaml
@@ -148,10 +148,10 @@ spec:
 ```
 
 
-## Parachain {#bob}
-After Alice is all set up, it is now time to take care of Bob. Also here, we will be creating the same types of objects: a Deployment for the collator, the necessary Services and an Ingress object. 
+## Parazincir {#bob}
+Alice her şeyi ayarladıktan sonra, şimdi Bob'a bakma zamanı. Ayrıca burada aynı tür nesneleri yaratacağız: harmanlayıcı için bir Dağıtım, gerekli Hizmetler ve bir Giriş nesnesi.
 
-### Deployment (collator) {#bob-deployment}
+### Dağıtım (düzenleyici) {#bob-dağıtım}
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -187,7 +187,7 @@ spec:
             claimName: efs-pv  
 ```
 
-### Service {#bob-service}
+### Servis {#bob-servis}
 
 ```yaml
 apiVersion: v1
@@ -213,9 +213,9 @@ spec:
     app.kubernetes.io/name: parachain-coll-01
 ```
 
-### Public RPC {#bob-rpc}
+### Herkese Açık RPC {#bob-rpc}
 
-In the cases of Bob, we also want to expose port `9944` which is used for RPC connections to the node.
+Bob durumunda, düğüme RPC bağlantıları için kullanılan '9944' bağlantı noktasını da göstermek istiyoruz.
 
 ```yaml
 apiVersion: v1
@@ -233,15 +233,14 @@ spec:
   selector:
     app.kubernetes.io/name: public-rpc
 ```
+### Giriş {#bob-giriş}
+Bob'un Giriş bildirimi, [yukarıdaki Alice](#alice-ingress) ile aynıdır.
 
-### Ingress {#bob-ingress}
-The Ingress manifest for Bob is the same as the one for [Alice above](#alice-ingress).
+## ACM ve Route53
+Düğümünüzü güzel ve güvenli bir URL ile dış dünyaya göstermeniz gerekiyorsa, AWS ACM'yi kullanabilirsiniz. Temel olarak yapmanız gereken tek şey, URL'nizin adıyla bir sertifika oluşturmak, onu doğrulamak (DNS aracılığıyla) ve ARN sonucunu almaktır. Ardından, Giriş Bildirimi dosyanıza `alb.ingress.kubernetes.io/certificate-arn` parametresinin bir değeri olarak ekleyin ve voilà!
 
-## ACM and Route53
-If you need to expose your node to the outside world with a nice and secure URL, you can use AWS ACM. Basically, all you need to do is to create a certificate with the name of your URL, validate it (via DNS) and get the result ARN. Then add it as a value of the `alb.ingress.kubernetes.io/certificate-arn` parameter in your Ingress Manifest file, and voilà!
-
-## Terraform for Automated Provisioning
-Of course, the creation of your certificate can be done through Terraform in case you want to automate it in your CI (we didn't make this choice yet, but we still might do so in the future). For some inspiration you can take a look at the `.tf` file below:
+## Otomatik Tedarik için Terraform
+Tabii ki, sertifikanızı CI'nizde otomatikleştirmek istemeniz durumunda Terraform aracılığıyla oluşturabilirsiniz (bu seçimi henüz yapmadık, ancak gelecekte yine de yapabiliriz). Biraz ilham almak için aşağıdaki `.tf` dosyasına göz atabilirsiniz:
 
 ```
 provider "aws" {
@@ -300,10 +299,10 @@ output "acm-arn" {
 
 ```
 
-The output value of this TF is the ARN to be used in your `Ingress` manifest file.
+Bu TF'nin çıktı değeri, 'Giriş' bildirim dosyanızda kullanılacak ARN'dir.
 
-## Github Actions
-After having the manifests ready, it is time to bring everything together and deploy the defined Kubernetes objects. Instead of using `kubectl apply`, we decided to integrate it in a CI/CD pipeline. We use Github Actions, and it's pretty straight-forward:
+## Github Eylemleri
+Manifest'leri hazırladıktan sonra, her şeyi bir araya getirmenin ve tanımlanan Kubernetes nesnelerini dağıtmanın zamanı geldi. "kubectl application" kullanmak yerine, onu bir CI/CD ardışık düzenine entegre etmeye karar verdik. Github Eylemlerini kullanıyoruz ve oldukça basit:
 
 ```yaml
 name: deploy app to k8s and expose
@@ -350,6 +349,6 @@ jobs:
           kubectl apply -f components.yaml
 ```
 
-This workflow creates the AWS Fargate profile after which it deploys the manifest file containing all your Kubernetes objects to the chosen Cluster. Don't forget to provide the correct access and secret keys :)
+Bu iş akışı, tüm Kubernetes nesnelerinizi içeren bildirim dosyasını seçilen Kümeye dağıttıktan sonra AWS Fargate profilini oluşturur. Doğru erişim ve gizli anahtarları sağlamayı unutmayın :)
 
-Good luck and hit us up on Discord if you have any questions!
+İyi şanslar ve herhangi bir sorunuz varsa bize Discord'dan ulaşın!
