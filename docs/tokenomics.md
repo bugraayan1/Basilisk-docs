@@ -5,25 +5,25 @@ title: Tokenomics
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The native BSX token has a max supply of **100,000,000,000 BSX**.
+Yerel BSX jetonunun maksimum kaynağı **100.000.000.000 BSX**'tir.
 
-The tokens will be distributed as follows (cumulative % of max supply):
+Jetonlar aşağıdaki gibi dağıtılacaktır (maksimum arzın kümülatif yüzdesi):
 
-* **15%** - Basilisk Crowdloan
-* **5.63%** - BSX LBP Participants
-* **4.37%** - HDX LBP Participants
-* **15%** - Intergalactic (founding team)
-* **9%** - Treasury
-* **38%** - Liquidity Mining
-* **12%** - Collators
-* **1%** - Airdrop to all wallets holding KSM
+* **%15** - Basilisk Crowdloan
+* **%5.63** - BSX LBP Katılımcıları
+* **%4.37** - HDX LBP Katılımcıları
+* **%15** - Galaksiler arası (kurucu ekip)
+* **%9** - Hazine
+* **%38** - Likidite Madenciliği
+* **%12** - Harmanlayıcılar
+* **%1** - KSM tutan tüm cüzdanlara airdrop
 
-The BSX allocations are subject to a vesting period as exemplified in the following distribution graphic:
+BSX tahsisleri, aşağıdaki dağıtım grafiğinde örneklendiği gibi bir hak kazanma süresine tabidir:
 
 <div style={{textAlign: 'center', marginBottom: '2rem'}}>
   <img alt="create-account" src={useBaseUrl('/img/tokenomics/bsx_distribution.jpg')}  />
 </div>
 
-Notes:
-* The distribution of all tokens will **begin after the BSX LBP event has concluded**. The BSX LBP event will take place approximately 2-4 weeks after Basilisk has secured its first parachain slot.
-* The exact start date of the rewards for collators and liquidity miners is currently unknown. This should take place within several weeks after conclusion of the BSX LBP event.
+Notlar:
+* Tüm jetonların dağıtımı **BSX LBP etkinliği sona erdikten sonra başlayacaktır**. BSX LBP etkinliği, Basilisk'in ilk parachain yuvasını güvence altına almasından yaklaşık 2-4 hafta sonra gerçekleşecek.
+* Koleksiyoncular ve likidite madencileri için ödüllerin kesin başlangıç tarihi şu anda bilinmiyor. Bu, BSX LBP olayının sona ermesinden sonraki birkaç hafta içinde gerçekleşmelidir.
