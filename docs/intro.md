@@ -4,20 +4,20 @@ title: Introduction to Basilisk
 slug: /
 ---
 
-Welcome to the Basilisk Documentation page! Here you can find a collection of useful resources which will help you navigate your Basilisk journey. The available content will grow as the project unfolds, and we promise to do our best to provide translations in a timely manner to ensure that everyone can participate.
+Basilisk Dokümantasyon sayfasına hoş geldiniz! Burada Basilisk yolculuğunuzda gezinmenize yardımcı olacak bir dizi faydalı kaynak bulabilirsiniz. Proje geliştikçe mevcut içerik artacak ve herkesin katılabilmesini sağlamak için çevirileri zamanında sağlamak için elimizden gelenin en iyisini yapacağımıza söz veriyoruz.
 
-Before you continue, don't forget to subscribe to the [Basilisk newsletter](https://basiliskfi.substack.com) to not miss any important updates.
+Devam etmeden önce, önemli güncellemeleri kaçırmamak için [Basilisk bültenine](https://basiliskfi.substack.com) abone olmayı unutmayın.
 
 ## Basilisk Crowdloan {#crowdloan}
 
-The Basilisk crowdloan for the Kusama parachain auctions is now live! Check out [this post](/basilisk_crowdloan) for more details, as well as [the step-by-step guide](/crowdloan_guide) on how to participate.
+Kusama parachain müzayedeleri için Basilisk kitle kredisi şimdi yayında! Daha fazla ayrıntı için [bu gönderiye](/basilisk_crowdloan) ve nasıl katılacağınızla ilgili [adım adım kılavuza](/crowdloan_guide) göz atın.
 
-Not feeling like you really understand concepts such as [parachains](/parachains), [parachain auctions](/parachain_auctions) or [crowdloans](/crowdloans)? Don't worry, we've got you covered! In our `Knowledge Base` you will find some useful introductory resources which will make you feel more comfortable with these subjects.
+[parachains](/parachains), [parachain açık artırmaları](/parachain_auctions) veya [crowdloans](/crowdloans) gibi kavramları gerçekten anladığınızı hissetmiyor musunuz? Endişelenme, seni koruduk! 'Bilgi Tabanımız'da, bu konularda kendinizi daha rahat hissetmenizi sağlayacak bazı faydalı giriş kaynakları bulacaksınız.
 
-## What is Basilisk? {#what-is-basilisk}
+## Basilisk nedir? {#basilisk nedir}
 
-Basilisk is a liquidity bootstrapping protocol built for Kusama. Its mission is to enable frictionless liquidity for the long tail crypto assets.
+Basilisk, Kusama için oluşturulmuş bir likidite önyükleme protokolüdür. Misyonu, uzun kuyruklu kripto varlıkları için sürtünmesiz likidite sağlamaktır.
 
-The modular design of Basilisk enables new crypto assets to bootstrap liquidity by choosing the Automated Market Maker (AMM) model which they find most convenient. The first version comes with implementations of a Liquidity Bootstrapping Pool (LBP) as well as XYK pools with order matching transactions. The following iterations will bring more advanced price discovery mechanisms to Basilisk such as auctions and bonding curves. An NFT marketplace is also on its way!
+Basilisk'in modüler tasarımı, yeni kripto varlıklarının en uygun buldukları Otomatik Piyasa Yapıcı (AMM) modelini seçerek likiditeyi ön yüklemesine olanak tanır. İlk sürüm, bir Likidite Önyükleme Havuzu (LBP) uygulamalarının yanı sıra sipariş eşleştirme işlemlerine sahip XYK havuzları ile birlikte gelir. Aşağıdaki yinelemeler, Basilisk'e açık artırmalar ve bağlama eğrileri gibi daha gelişmiş fiyat keşif mekanizmaları getirecektir. Bir NFT pazarı da yolda!
 
-Basilisk has close ties with [HydraDX](https://hydradx.io) which has set out to become the go-to liquidity provider on the Polkadot network. Together, Basilisk and HydraDX create a synergy which caters to the varying liquidity needs of cryptoassets throughout their entire lifecycle. Bootstrap liquidity in the early stages using a Basilisk AMM, then move on to the HydraDX Omnipool to unlock unprecedented cross-chain liquidity in an ocean of assets.
+Basilisk, Polkadot ağındaki en önemli likidite sağlayıcısı olmak için yola çıkan [HydraDX](https://hydradx.io) ile yakın ilişkilere sahiptir. Basilisk ve HydraDX birlikte, tüm yaşam döngüleri boyunca kripto varlıkların değişen likidite ihtiyaçlarını karşılayan bir sinerji yaratır. İlk aşamalarda bir Basilisk AMM kullanarak likiditeyi önyükleyin, ardından bir varlık okyanusunda benzeri görülmemiş çapraz zincir likiditesinin kilidini açmak için HydraDX Omnipool'a geçin.
